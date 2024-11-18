@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three.js Game</title>
+  <link rel="stylesheet" href="./style/style.css">
+
+  <!-- CDN pour Three.js -->
+  <script src="https://cdn.jsdelivr.net/npm/three@latest/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@latest/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@latest/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
+
+  <!-- Fichiers globaux -->
+  <script src="../src/utils/CameraManager.js"></script>
+  <script src="../src/scenes/MainScene.js"></script>
+  <script src="../src/objects/Hero.js"></script>
+  <script src="../src/index.js"></script>
+</head>
+<body>
+  <!-- Écran de démarrage -->
+  <div id="start-screen" class="screen active">
+    <h1>Bienvenue dans le jeu</h1>
+    <button id="start-button">Start</button>
+  </div>
+
+  <!-- Écran de sélection -->
+  <div id="select-screen" class="screen">
+    <h1>Choisissez votre héros</h1>
+    <button id="select-hero-button">Sélectionner Héros</button>
+  </div>
+
+  <!-- Écran principal avec la scène -->
+  <div id="game-screen" class="screen">
+    <h1>Scène de jeu</h1>
+    
+    <!-- Interface utilisateur pour Hero -->
+    <div id="hero-stats" class="stats-container">
+      <h3>Hero</h3>
+      <div class="health-bar">
+        <div class="health-bar-inner" style="width: 100%;"></div>
+      </div>
+      <ul>
+        <li id="hero-health"></li>
+        <li id="hero-attack">Attack: 10</li>
+        <li id="hero-range">Range: 3</li>
+      </ul>
+    </div>
+
+    <!-- Conteneur pour la scène -->
+    <div class="scene-container"></div>
+
+    <!-- Interface utilisateur pour Evil -->
+    <div id="evil-stats" class="stats-container">
+      <h3>Evil</h3>
+      <div class="health-bar">
+        <div class="health-bar-inner" style="width: 100%;"></div>
+      </div>
+      <ul>
+        <li id="evil-health">Health: 120</li>
+        <li id="evil-attack">Attack: 15</li>
+        <li id="evil-range">Range: 2</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
